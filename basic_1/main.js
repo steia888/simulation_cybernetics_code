@@ -10,9 +10,12 @@
 // runs before everything
 // use to load assets
 var duck;
+
 function preload() {
   // // load an image
   duck = loadImage('assets/duck.png');
+  
+  
 }
 
 // runs once at start
@@ -22,33 +25,49 @@ function setup() {
 
 // runs every frame
 function draw() {
-  background(0,0,255);
-  fill(255, 255, 255);
+  background(252,248,7);
+  fill(71, 141, 255);
+  stroke(255,128,0)
+  
 
+
+
+rotate(0.1)
   // https://p5js.org/reference/#/p5/ellipse
-  ellipse(50, 50, 80, 80);
+  ellipse(550, 300, 600, 600);
 
   // https://p5js.org/reference/#/p5/fill
-  fill(255, 204, 0);
-
+  fill(66, 134, 244);
+resetMatrix();
+rotate(-0.1)
   // https://p5js.org/reference/#/p5/rect
-  rect(30, 20, 55, 55);
 
-  fill(255, 100, 0);
+  fill(181, 10, 158);
   rotate(0.1);
-  rect(200, 180, 55, 55);
+  rect(500, 60, 50, 600);
   resetMatrix();
+  
+
+  rect(500, 60, 50, 200);
+  
 
   // get the center x and y coordinates
   [centerX, centerY] = [width/2, height/2];
 
   // rendering text
-  fill(255, 204, 0);
-  textSize(32);
-  text('word', centerX, centerY);
+  fill(10, 10, 181);
+  textSize(69);
+  text('hello there', 250, 100);
 
   // render the image at x=125, y=200
-  image(duck, 125, 200);
+  image(duck, 700, 200);
+
+  
+
+for (var i=0; i<100; i++) {
+  fill(100+i*20, 0, i*20)
+  image(duck, i*20, i*20, 40, 40)
+}
 }
 
 // resize canvas when the browser window resizes
